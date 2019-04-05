@@ -1,0 +1,46 @@
+server:
+  port: 9080
+  
+example:
+  property: ciao
+
+spring:
+  application:
+    name: licensingservice
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      enabled: true
+  main:
+    allow-bean-definition-overriding: true
+    
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      
+keycloak:
+  # turn off keycloak spring boot auto-configuration:
+  # We only want to use Spring Security without servlet container specific infrastructure
+  # This allows us to pull the Keycloak configuration from here instead of keycloak.json
+  enabled: false
+
+  realm: dev
+  auth-server-url: http://localhost:38080/auth
+  # The client_id
+  resource: organization-service
+  credentials:
+    # The client_secret
+    secret: e0009938-b004-4221-abcd-35d7935881ea
+  #ssl-required: external
+  bearer-only: true
+  # Configures what principal.getName() will return
+  principal-attribute: preferred_username
+  use-resource-role-mappings: true
+  token-minimum-time-to-live: 30

@@ -1,0 +1,22 @@
+spring.jpa.database: "POSTGRESQL"
+spring.datasource.platform:  "postgres"
+spring.jpa.show-sql: "false"
+spring.database.driverClassName: "org.postgresql.Driver"
+spring.datasource.url: "jdbc:postgresql://database:5432/eagle_eye_dev"
+spring.datasource.username: "postgres_dev"
+spring.datasource.password: "{cipher}d495ce8603af958b2526967648aa9620b7e834c4eaff66014aa805450736e119"
+spring.datasource.testWhileIdle: "true"
+spring.datasource.validationQuery: "SELECT 1"
+spring.jpa.properties.hibernate.dialect: "org.hibernate.dialect.PostgreSQLDialect"
+redis.server: "redis"
+redis.port: "6379"
+signing.key: "345345fsdfsf5345"
+
+rest.security.issuer-uri: http://localhost:38080/auth/realms/dev
+
+security.oauth2.client.client-id: licensing-service
+security.oauth2.client.client-secret: 7a4202ea-6255-4feb-a240-929877f56de3
+security.oauth2.client.user-authorization-uri: ${rest.security.issuer-uri}/protocol/openid-connect/auth
+security.oauth2.client.access-token-uri: ${rest.security.issuer-uri}/protocol/openid-connect/token
+security.oauth2.client.scope: openid
+security.oauth2.client.grant-type: client_credentials

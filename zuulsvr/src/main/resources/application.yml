@@ -1,0 +1,29 @@
+server:
+  port: 5555
+
+  #Setting logging levels
+logging:
+    level:
+      com.netflix: WARN
+      org.springframework.web: WARN
+      com.thoughtmechanix: DEBUG
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+
+#allow Zuul to propagate the “Authorization” HTTP header, this is a black list       
+#zuul:
+#  sensitiveHeaders: Cookie,Set-Cookie
+
+#zuul:
+#  ignored-services: '*'
+#  prefix:  /api
+#  routes:
+#    organizationservice: /organization/**
+#    licensingservice: /licensing/**

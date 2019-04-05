@@ -1,0 +1,15 @@
+zuul.ignored-services: "orgservice-new"
+zuul.prefix:  /api
+zuul.routes.organizationservice: /organization/**
+zuul.routes.licensingservice: /licensing/**
+zuul.routes.authenticationservice: /auth/**
+zuul.sensitiveHeaders: Authorization
+zuul.debug.request: true
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 2
+#hystrix.command.licensingservice.execution.isolation.thread.timeoutInMilliseconds: 2
+#licensingservice.ribbon.ReadTimeout: 2
+signing.key: "345345fsdfsf5345"
+
+security.oauth2.client.client-id: organization-service
+security.oauth2.client.client-secret: e0009938-b004-4221-abcd-35d7935881ea
+security.oauth2.client.grant-type: password
